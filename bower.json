@@ -1,0 +1,19 @@
+{
+  "name": "PX3",
+  "version": "0.0.0",
+  "homepage": "https://github.com/happychen998/PX3",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha"
+  }
+}

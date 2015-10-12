@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+  <meta charset="UTF-8">
+  <title>bootstrap 4 一览</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/example.css" rel="stylesheet">
+</head>
+<body>
+  <div class="bd-pageheader">
+    <div class="container">
+      <h1>Bootstrap 4 效果展示</h1>
+      <p class="lead">常见bootstrap4组件，使用jade模块创建</p>
+    </div>
+  </div>
+  <div class="container">
+    <h1 class="bd-title">导航</h1>
+    <p>Bootstrap中的导航组件分享了常用的标记和样式，从基本的<code>.nav</code>类到激活和禁用的状态。交换修饰类，可以在各种样式之间切换。</p>
+    <h2>简易导航</h2>
+    <h3>纵向</h3>
+    <div class="row bd-example">
+      <ul class="nav">
+        <li class="nav-item"><a href="#" class="nav-link">第一个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">第二个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">第三个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">无效链接</a></li>
+      </ul>
+    </div>
+    <div class="highlight highlight-source-shell"><pre><code class="language-html">    //- source code
+    .row.bd-example
+        ul.nav
+            li.nav-item: a.nav-link(href=&quot;#&quot;) 第一个链接
+            li.nav-item: a.nav-link(href=&quot;#&quot;) 第二个链接
+            li.nav-item: a.nav-link(href=&quot;#&quot;) 第三个链接
+            li.nav-item: a.nav-link.disabled(href=&quot;#&quot;) 无效链接
+</code></pre>
+
+    </div>
+    <h3>横向</h3>
+    <div class="row bd-example">
+      <nav class="nav"><a href="#" class="nav-link active">第一个链接&nbsp;&nbsp;</a><a href="#" class="nav-link">第二个链接&nbsp;&nbsp;</a><a href="#" class="nav-link">第三个链接&nbsp;&nbsp;</a><a href="#" class="nav-link disabled">无效链接</a></nav>
+    </div>
+    <div class="highlight highlight-source-shell"><pre><code class="language-html">    //- source code
+    .row.bd-example
+        nav.nav
+            a.nav-link.active(href=&quot;#&quot;) 第一个链接&amp;nbsp;&amp;nbsp;
+            a.nav-link(href=&quot;#&quot;) 第二个链接&amp;nbsp;&amp;nbsp;
+            a.nav-link(href=&quot;#&quot;) 第三个链接&amp;nbsp;&amp;nbsp;
+            a.nav-link.disabled(href=&quot;#&quot;) 无效链接
+</code></pre>
+
+    </div>
+    <h3>选项卡</h3>
+    <p>将上面的基本导航放在一起，添加一个<code>.nav-tabs</code>类以生成一个可轻触的界面。用 轻触JavaScript 插件创造可轻触的区域。</p>
+    <p>在其中增加了一个下拉菜单，属性中有关<code>role</code>,<code>aria-haspopup</code>,<code>aria-expanded</code>等是为了无障碍访问定义的属性</p>
+    <div class="row bd-example">
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a href="#" class="nav-link">第一个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active">第二个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">第三个链接</a></li>
+        <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">下拉菜单</a>
+          <div class="dropdown-menu"><a href="#" class="dropdown-item">第一个下拉菜单</a><a href="#" class="dropdown-item">第二个下拉菜单</a>
+            <div class="dropdown-divier"></div><a href="#" class="dropdown-item">第三个下拉菜单</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">无效链接</a></li>
+      </ul>
+    </div>
+    <div class="highlight highlight-source-shell"><pre><code class="language-html">    //- source code
+    .row.bd-example
+        ul.nav.nav-tabs
+            li.nav-item
+                a.nav-link(href=&quot;#&quot;) 第一个链接
+            li.nav-item
+                a.nav-link.active(href=&quot;#&quot;) 第二个链接
+            li.nav-item
+                a.nav-link(href=&quot;#&quot;) 第三个链接
+            li.nav-item.dropdown
+                a.nav-link.dropdown-toggle(href=&quot;#&quot;,data-toggle=&quot;dropdown&quot;,role=&quot;button&quot;,aria-haspopup=&quot;true&quot;,aria-expanded=&quot;false&quot;) 下拉菜单
+                .dropdown-menu
+                    a.dropdown-item(href=&quot;#&quot;) 第一个下拉菜单
+                    a.dropdown-item(href=&quot;#&quot;) 第二个下拉菜单
+                    .dropdown-divier
+                    a.dropdown-item(href=&quot;#&quot;) 第三个下拉菜单
+            li.nav-item: a.nav-link.disabled(href=&quot;#&quot;) 无效链接
+</code></pre>
+
+    </div>
+  </div>
+  <script src="../bower_components/jquery/dist/jquery.min.js"> </script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"> </script>
+  <script src="../js/example.js"></script>
+</body>

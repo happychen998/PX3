@@ -1,0 +1,88 @@
+extends ../layout.jade
+
+//- jade jade/pages/index.jade --out html -P -w
+block content
+	.bd-pageheader
+		.container
+			h1 Bootstrap 4 效果展示
+			p.lead 常见bootstrap4组件，使用jade模块创建
+	.container
+		h1.bd-title 导航
+		p Bootstrap中的导航组件分享了常用的标记和样式，从基本的<code>.nav</code>类到激活和禁用的状态。交换修饰类，可以在各种样式之间切换。
+		h2 简易导航
+		h3 纵向
+		.row.bd-example
+			ul.nav
+				li.nav-item: a.nav-link(href="#") 第一个链接
+				li.nav-item: a.nav-link(href="#") 第二个链接
+				li.nav-item: a.nav-link(href="#") 第三个链接
+				li.nav-item: a.nav-link.disabled(href="#") 无效链接
+		.highlight.highlight-source-shell
+			:markdown-it
+				```html
+					//- source code
+					.row.bd-example
+						ul.nav
+							li.nav-item: a.nav-link(href="#") 第一个链接
+							li.nav-item: a.nav-link(href="#") 第二个链接
+							li.nav-item: a.nav-link(href="#") 第三个链接
+							li.nav-item: a.nav-link.disabled(href="#") 无效链接
+				```
+		h3 横向
+		.row.bd-example
+			nav.nav
+				a.nav-link.active(href="#") 第一个链接&nbsp;&nbsp;
+				a.nav-link(href="#") 第二个链接&nbsp;&nbsp;
+				a.nav-link(href="#") 第三个链接&nbsp;&nbsp;
+				a.nav-link.disabled(href="#") 无效链接
+		.highlight.highlight-source-shell
+			:markdown-it
+				```html
+					//- source code
+					.row.bd-example
+						nav.nav
+							a.nav-link.active(href="#") 第一个链接&nbsp;&nbsp;
+							a.nav-link(href="#") 第二个链接&nbsp;&nbsp;
+							a.nav-link(href="#") 第三个链接&nbsp;&nbsp;
+							a.nav-link.disabled(href="#") 无效链接
+				```
+		h3 选项卡
+		p 将上面的基本导航放在一起，添加一个<code>.nav-tabs</code>类以生成一个可轻触的界面。用 轻触JavaScript 插件创造可轻触的区域。
+		p 在其中增加了一个下拉菜单，属性中有关<code>role</code>,<code>aria-haspopup</code>,<code>aria-expanded</code>等是为了无障碍访问定义的属性
+		.row.bd-example
+			ul.nav.nav-tabs
+				li.nav-item
+					a.nav-link(href="#") 第一个链接
+				li.nav-item
+					a.nav-link.active(href="#") 第二个链接
+				li.nav-item
+					a.nav-link(href="#") 第三个链接
+				li.nav-item.dropdown
+					a.nav-link.dropdown-toggle(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false") 下拉菜单
+					.dropdown-menu
+						a.dropdown-item(href="#") 第一个下拉菜单
+						a.dropdown-item(href="#") 第二个下拉菜单
+						.dropdown-divier
+						a.dropdown-item(href="#") 第三个下拉菜单
+				li.nav-item: a.nav-link.disabled(href="#") 无效链接
+		.highlight.highlight-source-shell
+			:markdown-it
+				```html
+					//- source code
+					.row.bd-example
+						ul.nav.nav-tabs
+							li.nav-item
+								a.nav-link(href="#") 第一个链接
+							li.nav-item
+								a.nav-link.active(href="#") 第二个链接
+							li.nav-item
+								a.nav-link(href="#") 第三个链接
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false") 下拉菜单
+								.dropdown-menu
+									a.dropdown-item(href="#") 第一个下拉菜单
+									a.dropdown-item(href="#") 第二个下拉菜单
+									.dropdown-divier
+									a.dropdown-item(href="#") 第三个下拉菜单
+							li.nav-item: a.nav-link.disabled(href="#") 无效链接
+				```
