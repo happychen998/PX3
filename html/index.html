@@ -62,7 +62,7 @@
         <li class="nav-item"><a href="#" class="nav-link">第三个链接</a></li>
         <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">下拉菜单</a>
           <div class="dropdown-menu"><a href="#" class="dropdown-item">第一个下拉菜单</a><a href="#" class="dropdown-item">第二个下拉菜单</a>
-            <div class="dropdown-divier"></div><a href="#" class="dropdown-item">第三个下拉菜单</a>
+            <div class="dropdown-divider"></div><a href="#" class="dropdown-item">第三个下拉菜单</a>
           </div>
         </li>
         <li class="nav-item"><a href="#" class="nav-link disabled">无效链接</a></li>
@@ -82,9 +82,260 @@
                 .dropdown-menu
                     a.dropdown-item(href=&quot;#&quot;) 第一个下拉菜单
                     a.dropdown-item(href=&quot;#&quot;) 第二个下拉菜单
-                    .dropdown-divier
+                    .dropdown-divider
                     a.dropdown-item(href=&quot;#&quot;) 第三个下拉菜单
             li.nav-item: a.nav-link.disabled(href=&quot;#&quot;) 无效链接
+</code></pre>
+
+    </div>
+    <h3>丸状导航</h3>
+    <p>用同样的HTML，但是使用<code>.nav-pills</code>代替</p>
+    <div class="row bd-example">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link">第一个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active">第二个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">第三个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">无效链接</a></li>
+      </ul>
+    </div>
+    <div class="highlight highlight-source-shell"><pre><code class="language-html">    //- source code
+    .row.bd-example
+            ul.nav.nav-pills
+                li.nav-item
+                    a.nav-link(href=&quot;#&quot;) 第一个链接
+                li.nav-item
+                    a.nav-link.active(href=&quot;#&quot;) 第二个链接
+                li.nav-item
+                    a.nav-link(href=&quot;#&quot;) 第三个链接
+                li.nav-item
+                    a.nav-link.disabled(href=&quot;#&quot;) 无效链接
+</code></pre>
+
+    </div>
+    <h3>堆叠丸状导航</h3>
+    <p>只需要向<code>.nav.nav-pills</code>添加<code>.nav-stacked</code>类</p>
+    <div class="row bd-example">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="nav-item"><a href="#" class="nav-link">第一个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active">第二个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">第三个链接</a></li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">无效链接</a></li>
+      </ul>
+    </div>
+    <div class="highlight highlight-source-shell"><pre><code class="language-html">    //- source code
+    .row.bd-example
+            ul.nav.nav-pills.nav-stacked
+                li.nav-item
+                    a.nav-link(href=&quot;#&quot;) 第一个链接
+                li.nav-item
+                    a.nav-link.active(href=&quot;#&quot;) 第二个链接
+                li.nav-item
+                    a.nav-link(href=&quot;#&quot;) 第三个链接
+                li.nav-item
+                    a.nav-link.disabled(href=&quot;#&quot;) 无效链接
+</code></pre>
+
+    </div>
+    <h3>选项卡面板</h3>
+    <p>根据当前选项卡，显示对应的面板</p>
+    <p>可以不写任何JavaScript代码就激活一个选项卡或者丸状按钮，只需要在一个元素上指定<code>data-toggle="tab"</code>或者<code>dta-toggle="pill"</code>。在<code>.nav-tabs</code>或者<code>.nav-pills</code>上使用data属性</p>
+    <p>想制作出淡入淡入效果，只要向每个<code>.tab-pane</code>上添加<code>.fade</code>。第一个选项卡块必须拥有<code>.in</code>类，以适当地淡入初始内容</p>
+    <div class="row bd-example">
+      <ul role="tablist" class="nav nav-tabs">
+        <li class="nav-item"><a href="#huanan" role="tab" data-toggle="tab" class="nav-link active">华南地区</a></li>
+        <li class="nav-item"><a href="#huadong" role="tab" data-toggle="tab" class="nav-link">华东地区</a></li>
+        <li class="nav-item"><a href="#huabei" role="tab" data-toggle="tab" class="nav-link">华北地区</a></li>
+        <li class="nav-item"><a href="#dongbei" role="tab" data-toggle="tab" class="nav-link">东北地区</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="huanan" role="tabpanel" class="tab-pane fade in active">
+          <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link">广东</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">广西</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">海南</a></li>
+          </ul>
+        </div>
+        <div id="huadong" role="tabpanel" class="tab-pane fade">
+          <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link">上海</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">浙江</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">江苏</a></li>
+          </ul>
+        </div>
+        <div id="huabei" role="tabpanel" class="tab-pane fade">
+          <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link">北京</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">天津</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">河北</a></li>
+          </ul>
+        </div>
+        <div id="dongbei" role="tabpanel" class="tab-pane fade">
+          <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link">吉林</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">辽宁</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">黑龙江</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="highlight highlight-source-shell"><pre><code class="language-html">    //- source code
+    .row.bd-example
+        ul.nav.nav-tabs(role=&quot;tablist&quot;)
+            li.nav-item
+                a.nav-link.active(href=&quot;#huanan&quot;,role=&quot;tab&quot;,data-toggle=&quot;tab&quot;) 华南地区
+            li.nav-item
+                a.nav-link(href=&quot;#huadong&quot;,role=&quot;tab&quot;,data-toggle=&quot;tab&quot;) 华东地区
+            li.nav-item
+                a.nav-link(href=&quot;#huabei&quot;,role=&quot;tab&quot;,data-toggle=&quot;tab&quot;) 华北地区
+            li.nav-item
+                a.nav-link(href=&quot;#dongbei&quot;,role=&quot;tab&quot;,data-toggle=&quot;tab&quot;) 东北地区
+        .tab-content
+            .tab-pane.fade.in.active#huanan(role=&quot;tabpanel&quot;)
+                ul.nav
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 广东
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 广西
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 海南
+            .tab-pane.fade#huadong(role=&quot;tabpanel&quot;)
+                ul.nav
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 上海
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 浙江
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 江苏
+            .tab-pane.fade#huabei(role=&quot;tabpanel&quot;)
+                ul.nav
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 北京
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 天津
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 河北
+            .tab-pane.fade#dongbei(role=&quot;tabpanel&quot;)
+                ul.nav
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 吉林
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 辽宁
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 黑龙江
+</code></pre>
+
+    </div>
+    <h1 class="bd-title">导航栏</h1>
+    <p>导航栏，包括商标，菜单、搜索框等一系列组件，并可固定位置，以及自适应屏幕</p>
+    <p>导航栏总是横向排列，即使导航是用纵向模式，也会改为横向显示</p>
+    <h2>主题</h2>
+    <h3>无色(白色)主题样式<code>navbar-light</code> <code>bg-faded</code> + 导航栏路径</h3>
+    <div class="row bd-example">
+      <nav class="navbar navbar-light bg-faded"><a class="navbar-brand"><href="#"> 商标
+          <ul class="nav navbar-nav">
+            <li class="nav-item active"><a href="#" class="nav-link">链接一</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接二</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接三</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接四</a></li>
+          </ul>
+          <form class="form-inline navbar-form pull-right">
+            <input type="text" placeholder="请输入搜索内容" class="form-control">
+            <button class="btn btn-success-outline">搜索</button>
+          </form></a></nav>
+      <ol class="breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">分类</a></li>
+        <li><a href="#">详情</a></li>
+      </ol>
+    </div>
+    <div class="highlight highlight-source-shell"><pre><code class="language-html">    //- source code
+    .row.bd-example
+            nav.navbar.navbar-light.bg-faded: a.navbar-brand&lt;href=&quot;#&quot;&gt; 商标
+                ul.nav.navbar-nav
+                    li.nav-item.active: a.nav-link(href=&quot;#&quot;) 链接一
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 链接二
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 链接三
+                    li.nav-item: a.nav-link(href=&quot;#&quot;) 链接四
+                form.form-inline.navbar-form.pull-right
+                    input.form-control(type=&quot;text&quot; placeholder=&quot;请输入搜索内容&quot;)
+                    button.btn.btn-success-outline 搜索
+            ol.breadcrumb
+                li: a(href=&quot;#&quot;) 首页
+                li: a(href=&quot;#&quot;) 分类
+                li: a(href=&quot;#&quot;) 详情
+</code></pre>
+
+    </div>
+    <h3>黑色主题样式<code>navbar-dark</code> <code>bg-inverse</code></h3>
+    <p>注意，主题样式不同，搜索按钮的样式也不同</p>
+    <div class="row bd-example">
+      <nav class="navbar navbar-dark bg-inverse"><a class="navbar-brand"><href="#"> 商标
+          <ul class="nav navbar-nav">
+            <li class="nav-item active"><a href="#" class="nav-link">链接一</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接二</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接三</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接四</a></li>
+          </ul>
+          <form class="form-inline navbar-form pull-right">
+            <input type="text" placeholder="请输入搜索内容" class="form-control">
+            <button class="btn btn-info-outline">搜索</button>
+          </form></a></nav>
+    </div>
+    <h3>蓝色主题样式<code>navbar-dark</code> <code>bg-primary</code></h3>
+    <div class="row bd-example">
+      <nav class="navbar navbar-dark bg-primary"><a class="navbar-brand"><href="#"> 商标
+          <ul class="nav navbar-nav">
+            <li class="nav-item active"><a href="#" class="nav-link">链接一</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接二</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接三</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接四</a></li>
+          </ul>
+          <form class="form-inline navbar-form pull-right">
+            <input type="text" placeholder="请输入搜索内容" class="form-control">
+            <button class="btn btn-secondary-outline">搜索</button>
+          </form></a></nav>
+    </div>
+    <h3>自定义浅色主题样式<code>navbar-light</code> <code>background-color: #e3f2fd</code></h3>
+    <div class="row bd-example">
+      <nav style="background-color: #e3f2fd" class="navbar navbar-light"><a class="navbar-brand"><href="#"> 商标
+          <ul class="nav navbar-nav">
+            <li class="nav-item active"><a href="#" class="nav-link">链接一</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接二</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接三</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接四</a></li>
+          </ul>
+          <form class="form-inline navbar-form pull-right">
+            <input type="text" placeholder="请输入搜索内容" class="form-control">
+            <button class="btn btn-primary-outline">搜索</button>
+          </form></a></nav>
+    </div>
+    <h2>其它</h2>
+    <h3>可折叠的内容</h3>
+    <div class="row bd-example">
+      <nav style="background-color: #e3f2fd" class="navbar navbar-light"><a class="navbar-brand"><href="#"> 商标
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <button type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" class="navbar-toggler">&#9776;</button>
+            </li>
+            <li class="nav-item active"><a href="#" class="nav-link">链接一</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接二</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接三</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">链接四</a></li>
+          </ul>
+          <form class="form-inline navbar-form pull-right">
+            <input type="text" placeholder="请输入搜索内容" class="form-control">
+            <button class="btn btn-primary-outline">搜索</button>
+          </form></a></nav>
+      <div id="exCollapsingNavbar" class="collapse">
+        <div class="bg-inverse p-a">
+          <h4>呵呵，我躲起来了</h4><span class="text-muted">伦家害羞ing......</span>
+        </div>
+      </div>
+    </div>
+    <div class="highlight highlight-source-shell"><pre><code class="language-html">    //- source code
+    .row.bd-example
+        nav.navbar.navbar-light(style=&quot;background-color: #e3f2fd&quot;): a.navbar-brand&lt;href=&quot;#&quot;&gt; 商标
+            ul.nav.navbar-nav
+                li.nav-item: button.navbar-toggler(type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#exCollapsingNavbar&quot;) &amp;#9776;
+                li.nav-item.active: a.nav-link(href=&quot;#&quot;) 链接一
+                li.nav-item: a.nav-link(href=&quot;#&quot;) 链接二
+                li.nav-item: a.nav-link(href=&quot;#&quot;) 链接三
+                li.nav-item: a.nav-link(href=&quot;#&quot;) 链接四
+            form.form-inline.navbar-form.pull-right
+                input.form-control(type=&quot;text&quot; placeholder=&quot;请输入搜索内容&quot;)
+                button.btn.btn-primary-outline 搜索
+        .collapse#exCollapsingNavbar
+            .bg-inverse.p-a
+                h4 呵呵，我躲起来了
+                span.text-muted 伦家害羞ing......
 </code></pre>
 
     </div>
